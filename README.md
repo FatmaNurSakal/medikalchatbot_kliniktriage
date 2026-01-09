@@ -20,14 +20,37 @@ Uygulama, kullanıcıların sağlıkla ilgili sorularını doğal dilde alır ve
 - **HTTP API entegrasyonu** (ChatGPT / Gemini)
 ---
 ## ⚙️ Kurulum
-### 1️⃣ Olası Derleme Hataları İçin Temizlik
+### 1️⃣ Olası Derleme Hataları İçin Temizle ve Bağımlılıkları yükle
 ```bash
 flutter clean
 ```
-### 2️⃣ Bağımlılıkları yükle
 ```bash
 flutter pub get
 ```
+### 2️⃣ Firebase Kurulumu
+
+- Bu proje Firebase Authentication kullanır.
+  
+1. Firebase Console üzerinden bir proje oluştur
+
+2. Authentication → Sign-in method bölümünden Google girişini aktif et
+
+3. Android için google-services.json dosyasını aşağıdaki yola koy:
+
+```bash
+android/app/google-services.json
+```
+
+4. iOS için GoogleService-Info.plist dosyasını aşağıdaki yola koy:
+
+```bash
+ios/Runner/GoogleService-Info.plist
+```
+
+> ℹ️ **Not:**  
+> Firebase yapılandırma dosyaları (`google-services.json`,  
+> `GoogleService-Info.plist`) repo’da yoksa, giriş ekranı çalışmaz.
+
 ### 3️⃣ Uygulamayı Çalıştır
 ```bash
 flutter run
